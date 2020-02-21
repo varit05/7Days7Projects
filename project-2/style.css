@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
+** {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ff7f50;
+  color: #fff;
+  flex-direction: column;
+  font-family: 'Press Start 2P';
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1 {
+  line-height: 1.4;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: margin 1s linear;
+  height: 100vh;
+  width: 100vw;
+}
+
+.screen.up {
+  margin-top: -100vh;
+}
+
+.start-game-btn {
+  border: 0;
+  padding: 20px 15px;
+  font-family: 'Press Start 2P';
+  cursor: grab;
+}
+
+.start-game-btn:hover {
+  opacity: 0.8;
+}
+
+.start-game-btn:active {
+  opacity: 0.6;
+}
+
+.insects_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.insects_list li {
+  margin: 10px;
+}
+
+.choose-insect {
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: grab;
+  font-family: 'Press Start 2P';
+}
+
+.choose-insect:hover {
+  background-color: #fff;
+  color: #516dff;
+}
+
+.choose-insect:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.choose-insect img {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.game_container {
+  position: relative;
+}
+
+#time,
+#score {
+  top: 20px;
+  position: absolute;
+}
+
+@media screen and (max-width: 480px) {
+  #time,
+  #score {
+    font-size: 12px;
+  }
+}
+
+#time {
+  left: 20px;
+}
+
+#score {
+  right: 20px;
+}
+
+#annoying_message {
+  line-height: 1.6;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transition: transform 0.4s ease-in;
+  transform: translate(-50%, -150%);
+  opacity: 0;
+  text-align: center;
+  width: 100%;
+}
+
+#annoying_message.visible {
+  transform: translate(-50%, 100%);
+  opacity: 1;
+}
+
+.insect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1);
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease-out;
+}
+
+.insect.catched {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.insect img {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+}
