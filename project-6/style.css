@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Lacquer&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ff7f50;
+  font-family: 'Lacquer';
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.container div {
+  padding: 15px;
+}
+button {
+  padding: 5px;
+  background-color: #999;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #fff;
+}
+.tooltip-text {
+  display: none;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-family: 'Lacquer';
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip-text.active {
+  display: block;
+  opacity: 1;
+  font-family: 'Lacquer';
+  font-weight: 500;
+  font-size: 11px;
+  padding: 5px;
+}
+.tooltip-text.active::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
